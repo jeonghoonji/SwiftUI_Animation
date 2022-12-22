@@ -28,6 +28,7 @@ struct ContentView: View {
             // MARK: 맵 부분
             Map(coordinateRegion: $locationManager.region, showsUserLocation: true)
                 .edgesIgnoringSafeArea(.all)
+            
             //
             if circleShowBool {
                 Circle() // Large circle: Scale and opacity animations
@@ -38,7 +39,7 @@ struct ContentView: View {
                     .offset(y: -330)
                     //easeOut 빠른 속도로 애니메이션을 시작 애니메이션 끝에 다다를수록 점점 느려짐
                     .animation(Animation.easeOut(duration: 1).delay(1).repeatCount(1, autoreverses: false))
-//                    .animation(Animation.easeOut(duration: 1).delay(1).repeatForever(autoreverses: false))
+//                    .animation(Animation.easeOut(duration: 2).delay(2).repeatForever(autoreverses: false))
                     .onAppear(){
                         self.animateLargeCircle.toggle()
                     }
